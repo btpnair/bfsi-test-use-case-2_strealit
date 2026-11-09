@@ -1,0 +1,224 @@
+{
+  "classification": "SYNTHETIC_DEMO_ONLY",
+  "artifact": "Internal decision-support report, not external submission",
+  "source": {
+    "case": {
+      "id": "LEADS-DEMO-001",
+      "module": "leads",
+      "title": "Consented engaged prospect",
+      "state": "NEW",
+      "version": 1,
+      "updated_at": "2026-11-06T06:54:22+00:00"
+    },
+    "facts": {
+      "prospect": "DEMO_PROSPECT_A",
+      "product": "DEPOSIT",
+      "channel": "EMAIL",
+      "consent": true,
+      "consent_source": "CONSENT-DEMO-01",
+      "consent_expires": "2027-12-31",
+      "dnc": false,
+      "requested_callback": true,
+      "engagements_7d": 3,
+      "need_confirmed": true,
+      "days_since_contact": 2,
+      "classification": "SYNTHETIC_DEMO_ONLY"
+    },
+    "analysis": {
+      "findings": [],
+      "metrics": [
+        {
+          "label": "Rule score",
+          "value": "100/100"
+        },
+        {
+          "label": "Contact permission",
+          "value": "Allowed by fixture"
+        },
+        {
+          "label": "Preferred channel",
+          "value": "EMAIL"
+        },
+        {
+          "label": "Product interest",
+          "value": "DEPOSIT"
+        }
+      ],
+      "details": [
+        {
+          "reference": "SCORE-1",
+          "subject": "Callback requested",
+          "value": "30 points"
+        },
+        {
+          "reference": "SCORE-2",
+          "subject": "Recent engagement",
+          "value": "30 points"
+        },
+        {
+          "reference": "SCORE-3",
+          "subject": "Need confirmed",
+          "value": "30 points"
+        },
+        {
+          "reference": "SCORE-4",
+          "subject": "Recent contact",
+          "value": "10 points"
+        },
+        {
+          "reference": "ENG-01",
+          "subject": "2026-11-02",
+          "value": "Prospect asked for deposit product information"
+        },
+        {
+          "reference": "ENG-02",
+          "subject": "2026-11-04",
+          "value": "Callback preference recorded"
+        }
+      ],
+      "draft": "Draft only \u2014 EMAIL: Hello DEMO_PROSPECT_A, you asked for information about deposit options. An authorised relationship manager can explain current terms, eligibility and suitability. No rate or benefit is promised.",
+      "graph": [],
+      "blockers": 0,
+      "evidence_ids": [
+        "CONSENT-DEMO-01",
+        "ENG-01",
+        "ENG-02"
+      ],
+      "policy_version": "workbench-demo-1",
+      "as_of": "2026-11-06T12:00:00",
+      "method": "Deterministic fixture analysis; no trained model, OCR or external verification."
+    },
+    "documents": [
+      {
+        "id": "CONSENT-DEMO-01",
+        "type": "CONSENT",
+        "source": "Synthetic evidence fixture \u2014 no external verification",
+        "status": "SIMULATED_VERIFIED",
+        "fields": {
+          "channel": "EMAIL",
+          "purpose": "DEMO_PRODUCT_INFORMATION"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "id": "prepare",
+        "label": "Prepare engagement draft",
+        "enabled": true,
+        "why": "",
+        "roles": [
+          "maker"
+        ]
+      },
+      {
+        "id": "request_review",
+        "label": "Submit for independent review",
+        "enabled": false,
+        "why": "This action is not available in the current case state.",
+        "roles": [
+          "maker"
+        ]
+      },
+      {
+        "id": "approve",
+        "label": "Accept RM handoff",
+        "enabled": false,
+        "why": "This action requires the designated independent reviewer or operational role.",
+        "roles": [
+          "rm"
+        ]
+      },
+      {
+        "id": "return",
+        "label": "Return for correction",
+        "enabled": false,
+        "why": "This action requires the designated independent reviewer or operational role.",
+        "roles": [
+          "rm"
+        ]
+      },
+      {
+        "id": "add_note",
+        "label": "Add evidence-backed note",
+        "enabled": true,
+        "why": "",
+        "roles": [
+          "maker",
+          "rm"
+        ]
+      },
+      {
+        "id": "withdraw_consent",
+        "label": "Record consent withdrawal / suppress",
+        "enabled": true,
+        "why": "",
+        "roles": [
+          "maker",
+          "rm"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "at": "2026-11-06T06:54:22+00:00",
+        "subject": "subject:2f6158a607f8f3b9518a87eb",
+        "role": "maker",
+        "action": "case_created",
+        "reason": "Seeded fictional scenario",
+        "evidence": "[]",
+        "version": 1
+      }
+    ],
+    "connector": {
+      "status": "NOT_CONNECTED",
+      "message": "Bank-approved integration required. No live verification, account creation, outreach, refund or STR filing is available."
+    }
+  },
+  "payload_versions": [
+    {
+      "version": 1,
+      "state": "NEW",
+      "at": "2026-11-06T06:54:22+00:00",
+      "payload": {
+        "prospect": "DEMO_PROSPECT_A",
+        "product": "DEPOSIT",
+        "channel": "EMAIL",
+        "consent": true,
+        "consent_source": "CONSENT-DEMO-01",
+        "consent_expires": "2027-12-31",
+        "dnc": false,
+        "requested_callback": true,
+        "engagements_7d": 3,
+        "need_confirmed": true,
+        "days_since_contact": 2,
+        "history": [
+          {
+            "id": "ENG-01",
+            "date": "2026-11-02",
+            "event": "Prospect asked for deposit product information"
+          },
+          {
+            "id": "ENG-02",
+            "date": "2026-11-04",
+            "event": "Callback preference recorded"
+          }
+        ],
+        "documents": [
+          {
+            "id": "CONSENT-DEMO-01",
+            "type": "CONSENT",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "channel": "EMAIL",
+              "purpose": "DEMO_PRODUCT_INFORMATION"
+            }
+          }
+        ],
+        "classification": "SYNTHETIC_DEMO_ONLY"
+      }
+    }
+  ],
+  "notice": "No regulatory format, legal title clearance, credit approval or live bank action is certified.",
+  "content_sha256": "30d5fa9ad76dc4be918a368672eee4493c28651e8cf0613ebfd7fabfdbf4669a"
+}

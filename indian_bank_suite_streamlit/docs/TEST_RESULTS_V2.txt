@@ -1,0 +1,89 @@
+MoneyWise v2 final verification
+Date: 6 November 2026
+Platform: Darwin 25.6.0 arm64, Python 3.13.17
+Command: python3 -m unittest discover -s tests -v
+
+test_active_goal_limit (test_goals_security.GoalLifecycleTests.test_active_goal_limit) ... ok
+test_archive_restore_retains_progress (test_goals_security.GoalLifecycleTests.test_archive_restore_retains_progress) ... ok
+test_audit_minimization (test_goals_security.GoalLifecycleTests.test_audit_minimization) ... ok
+test_cannot_edit_archive (test_goals_security.GoalLifecycleTests.test_cannot_edit_archive) ... ok
+test_cross_customer_same_name_allowed (test_goals_security.GoalLifecycleTests.test_cross_customer_same_name_allowed) ... ok
+test_duplicate_names_normalized (test_goals_security.GoalLifecycleTests.test_duplicate_names_normalized) ... ok
+test_edit_and_archive_ownership (test_goals_security.GoalLifecycleTests.test_edit_and_archive_ownership) ... ok
+test_edit_persists_and_versions (test_goals_security.GoalLifecycleTests.test_edit_persists_and_versions) ... ok
+test_invalid_values_have_field_errors (test_goals_security.GoalLifecycleTests.test_invalid_values_have_field_errors) ... ok
+test_markup_and_hidden_formatting (test_goals_security.GoalLifecycleTests.test_markup_and_hidden_formatting) ... ok
+test_migration_preserves_existing_goals (test_goals_security.GoalLifecycleTests.test_migration_preserves_existing_goals) ... ok
+test_overdue_progress_edit_and_completed (test_goals_security.GoalLifecycleTests.test_overdue_progress_edit_and_completed) ... ok
+test_stale_edit_cannot_overwrite (test_goals_security.GoalLifecycleTests.test_stale_edit_cannot_overwrite) ... ok
+test_chat_rejects_without_echo_or_persistence (test_goals_security.PrivacyTests.test_chat_rejects_without_echo_or_persistence) ... ok
+test_goal_chat_requires_review (test_goals_security.PrivacyTests.test_goal_chat_requires_review) ... ok
+test_goal_names_reject_pii (test_goals_security.PrivacyTests.test_goal_names_reject_pii) ... ok
+test_personal_data_export_rejected (test_goals_security.PrivacyTests.test_personal_data_export_rejected) ... ok
+test_scope_guard_cannot_expose_other_customer (test_goals_security.PrivacyTests.test_scope_guard_cannot_expose_other_customer) ... ok
+test_sensitive_patterns (test_goals_security.PrivacyTests.test_sensitive_patterns) ... ok
+test_unlabelled_export_rejected (test_goals_security.PrivacyTests.test_unlabelled_export_rejected) ... ok
+test_acknowledgement_required (test_goals_security.ReviewHTTPTests.test_acknowledgement_required) ... ok
+test_api_goal_edit_and_stale_conflict (test_goals_security.ReviewHTTPTests.test_api_goal_edit_and_stale_conflict) ... ok
+test_api_minimises_identifiers_and_audit (test_goals_security.ReviewHTTPTests.test_api_minimises_identifiers_and_audit) ... ok
+test_cookie_flags_and_no_token_in_json (test_goals_security.ReviewHTTPTests.test_cookie_flags_and_no_token_in_json) ... ok
+test_csrf_and_readonly_chat (test_goals_security.ReviewHTTPTests.test_csrf_and_readonly_chat) ... ok
+test_idle_expiry (test_goals_security.ReviewHTTPTests.test_idle_expiry) ... ok
+test_invalid_pii_not_echoed (test_goals_security.ReviewHTTPTests.test_invalid_pii_not_echoed) ... ok
+test_mass_assignment_rejected (test_goals_security.ReviewHTTPTests.test_mass_assignment_rejected) ... ok
+test_rate_limit_signin (test_goals_security.ReviewHTTPTests.test_rate_limit_signin) ... ok
+test_relogin_revokes_old_session (test_goals_security.ReviewHTTPTests.test_relogin_revokes_old_session) ... ok
+test_review_cannot_be_used_by_another_customer (test_goals_security.ReviewHTTPTests.test_review_cannot_be_used_by_another_customer) ... ok
+test_review_does_not_write_until_confirmed (test_goals_security.ReviewHTTPTests.test_review_does_not_write_until_confirmed) ... ok
+test_review_expiry (test_goals_security.ReviewHTTPTests.test_review_expiry) ... ok
+test_boolean_version_cannot_edit (test_goals_security.UpgradeAndRegressionTests.test_boolean_version_cannot_edit) ... ok
+test_empty_and_archived_goal_messages (test_goals_security.UpgradeAndRegressionTests.test_empty_and_archived_goal_messages) ... ok
+test_password_hash_iterations_and_legacy_upgrade (test_goals_security.UpgradeAndRegressionTests.test_password_hash_iterations_and_legacy_upgrade) ... ok
+test_upgrade_preserves_source_and_goals (test_goals_security.UpgradeAndRegressionTests.test_upgrade_preserves_source_and_goals) ... ok
+test_upgrade_rejects_missing_source (test_goals_security.UpgradeAndRegressionTests.test_upgrade_rejects_missing_source) ... ok
+test_upgrade_will_not_overwrite (test_goals_security.UpgradeAndRegressionTests.test_upgrade_will_not_overwrite) ... ok
+test_category_followup_persists (test_pfm.FinanceTests.test_category_followup_persists) ... ok
+test_cross_month_refund (test_pfm.FinanceTests.test_cross_month_refund) ... ok
+test_customer_isolation (test_pfm.FinanceTests.test_customer_isolation) ... ok
+test_empty_period (test_pfm.FinanceTests.test_empty_period) ... ok
+test_goal_chat_command (test_pfm.FinanceTests.test_goal_chat_command) ... ok
+test_goals_and_projection_persist (test_pfm.FinanceTests.test_goals_and_projection_persist) ... ok
+test_income_chat (test_pfm.FinanceTests.test_income_chat) ... ok
+test_invalid_goals (test_pfm.FinanceTests.test_invalid_goals) ... ok
+test_invalid_month (test_pfm.FinanceTests.test_invalid_month) ... ok
+test_no_financial_execution (test_pfm.FinanceTests.test_no_financial_execution) ... ok
+test_october_manual_totals (test_pfm.FinanceTests.test_october_manual_totals) ... ok
+test_recurring_candidates (test_pfm.FinanceTests.test_recurring_candidates) ... ok
+test_unknown_category_review (test_pfm.FinanceTests.test_unknown_category_review) ... ok
+test_unknown_intent_and_audit_minimisation (test_pfm.FinanceTests.test_unknown_intent_and_audit_minimisation) ... ok
+test_word_boundary (test_pfm.FinanceTests.test_word_boundary) ... ok
+test_bad_origin_and_host (test_pfm.HTTPTests.test_bad_origin_and_host) ... ok
+test_bad_request (test_pfm.HTTPTests.test_bad_request) ... ok
+test_cannot_override_customer (test_pfm.HTTPTests.test_cannot_override_customer) ... ok
+test_expired_session (test_pfm.HTTPTests.test_expired_session) ... ok
+test_kill_switch (test_pfm.HTTPTests.test_kill_switch) ... ok
+test_login_chat_goal_logout (test_pfm.HTTPTests.test_login_chat_goal_logout) ... ok
+test_request_guard (test_pfm.HTTPTests.test_request_guard) ... ok
+test_requires_authentication (test_pfm.HTTPTests.test_requires_authentication) ... ok
+test_static_assets_and_no_traversal (test_pfm.HTTPTests.test_static_assets_and_no_traversal) ... ok
+test_account_owner_across_imports (test_pfm.MoneyAndAdapterTests.test_account_owner_across_imports) ... ok
+test_bad_money (test_pfm.MoneyAndAdapterTests.test_bad_money) ... ok
+test_changed_duplicate_atomic_rollback (test_pfm.MoneyAndAdapterTests.test_changed_duplicate_atomic_rollback) ... ok
+test_cumulative_refund_across_imports (test_pfm.MoneyAndAdapterTests.test_cumulative_refund_across_imports) ... ok
+test_currency_rejected (test_pfm.MoneyAndAdapterTests.test_currency_rejected) ... ok
+test_decimal_exactness (test_pfm.MoneyAndAdapterTests.test_decimal_exactness) ... ok
+test_duplicate_ids (test_pfm.MoneyAndAdapterTests.test_duplicate_ids) ... ok
+test_excess_refund (test_pfm.MoneyAndAdapterTests.test_excess_refund) ... ok
+test_idempotent_import (test_pfm.MoneyAndAdapterTests.test_idempotent_import) ... ok
+test_invalid_credit_payment (test_pfm.MoneyAndAdapterTests.test_invalid_credit_payment) ... ok
+test_invalid_date_rejected (test_pfm.MoneyAndAdapterTests.test_invalid_date_rejected) ... ok
+test_orphan_refund (test_pfm.MoneyAndAdapterTests.test_orphan_refund) ... ok
+test_refund_cannot_cross_customer (test_pfm.MoneyAndAdapterTests.test_refund_cannot_cross_customer) ... ok
+
+----------------------------------------------------------------------
+Ran 76 tests in 19.626s
+
+OK
+
+Additional verification: Python compilation, JavaScript syntax and zsh launcher syntax passed.
+Browser walkthrough passed: login acknowledgement; October dashboard; create/review/confirm; edit prefill and confirm; saved>target inline rejection; archive/restore with progress retained; fictional PAN-pattern rejection without chat echo; grounded Food spending; screen amount masking; sign-out removes protected values.

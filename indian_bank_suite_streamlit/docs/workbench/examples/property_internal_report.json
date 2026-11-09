@@ -1,0 +1,248 @@
+{
+  "classification": "SYNTHETIC_DEMO_ONLY",
+  "artifact": "Internal decision-support report, not external submission",
+  "source": {
+    "case": {
+      "id": "PROPERTY-DEMO-001",
+      "module": "property",
+      "title": "Complete synthetic title chain",
+      "state": "NEW",
+      "version": 1,
+      "updated_at": "2026-11-06T06:54:22+00:00"
+    },
+    "facts": {
+      "property": "DEMO_PLOT_A",
+      "declared_value": "8500000.00",
+      "owner": "OWNER_C",
+      "registry_status": "SIMULATED_CLEAR",
+      "litigation_status": "SIMULATED_CLEAR",
+      "classification": "SYNTHETIC_DEMO_ONLY"
+    },
+    "analysis": {
+      "findings": [],
+      "metrics": [
+        {
+          "label": "Declared value",
+          "value": "INR 8500000.00"
+        },
+        {
+          "label": "Comparable median",
+          "value": "INR 8200000.00"
+        },
+        {
+          "label": "Variance",
+          "value": "3.66%"
+        },
+        {
+          "label": "Title entries",
+          "value": "2"
+        }
+      ],
+      "details": [
+        {
+          "reference": "TITLE-01",
+          "subject": "2004-06-12",
+          "value": "OWNER_A \u2192 OWNER_B"
+        },
+        {
+          "reference": "TITLE-02",
+          "subject": "2015-04-16",
+          "value": "OWNER_B \u2192 OWNER_C"
+        }
+      ],
+      "draft": "Property DEMO_PLOT_A: 2 title entries reconstructed. Declared INR 8500000.00; synthetic comparable median INR 8200000.00; variance 3.66%. Review findings: No configured fixture inconsistencies detected. This report records evidence and gaps; it is not title certification, valuation advice or a lending decision.",
+      "graph": [],
+      "blockers": 0,
+      "evidence_ids": [
+        "DEED-01",
+        "EC-01",
+        "PLAN-01",
+        "TITLE-01",
+        "TITLE-02",
+        "VAL-01",
+        "VAL-02",
+        "VAL-03"
+      ],
+      "policy_version": "workbench-demo-1",
+      "as_of": "2026-11-06T12:00:00",
+      "method": "Deterministic fixture analysis; no trained model, OCR or external verification."
+    },
+    "documents": [
+      {
+        "id": "DEED-01",
+        "type": "TITLE_DEED",
+        "source": "Synthetic evidence fixture \u2014 no external verification",
+        "status": "SIMULATED_VERIFIED",
+        "fields": {
+          "property": "DEMO_PLOT_A",
+          "owner": "OWNER_C"
+        }
+      },
+      {
+        "id": "EC-01",
+        "type": "ENCUMBRANCE_SNAPSHOT",
+        "source": "Synthetic evidence fixture \u2014 no external verification",
+        "status": "SIMULATED_VERIFIED",
+        "fields": {
+          "status": "SIMULATED_CLEAR"
+        }
+      },
+      {
+        "id": "PLAN-01",
+        "type": "BUILDING_PLAN",
+        "source": "Synthetic evidence fixture \u2014 no external verification",
+        "status": "SIMULATED_VERIFIED",
+        "fields": {
+          "status": "SIMULATED_PRESENT"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "id": "prepare",
+        "label": "Prepare findings report",
+        "enabled": true,
+        "why": "",
+        "roles": [
+          "maker"
+        ]
+      },
+      {
+        "id": "request_review",
+        "label": "Submit for independent review",
+        "enabled": false,
+        "why": "This action is not available in the current case state.",
+        "roles": [
+          "maker"
+        ]
+      },
+      {
+        "id": "approve",
+        "label": "Sign off findings review",
+        "enabled": false,
+        "why": "This action requires the designated independent reviewer or operational role.",
+        "roles": [
+          "checker"
+        ]
+      },
+      {
+        "id": "return",
+        "label": "Return for correction",
+        "enabled": false,
+        "why": "This action requires the designated independent reviewer or operational role.",
+        "roles": [
+          "checker"
+        ]
+      },
+      {
+        "id": "add_note",
+        "label": "Add evidence-backed note",
+        "enabled": true,
+        "why": "",
+        "roles": [
+          "maker",
+          "checker"
+        ]
+      },
+      {
+        "id": "correct_fixture",
+        "label": "Load corrected synthetic evidence",
+        "enabled": true,
+        "why": "",
+        "roles": [
+          "maker"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "at": "2026-11-06T06:54:22+00:00",
+        "subject": "subject:2f6158a607f8f3b9518a87eb",
+        "role": "maker",
+        "action": "case_created",
+        "reason": "Seeded fictional scenario",
+        "evidence": "[]",
+        "version": 1
+      }
+    ],
+    "connector": {
+      "status": "NOT_CONNECTED",
+      "message": "Bank-approved integration required. No live verification, account creation, outreach, refund or STR filing is available."
+    }
+  },
+  "payload_versions": [
+    {
+      "version": 1,
+      "state": "NEW",
+      "at": "2026-11-06T06:54:22+00:00",
+      "payload": {
+        "property": "DEMO_PLOT_A",
+        "declared_value": "8500000.00",
+        "owner": "OWNER_C",
+        "registry_status": "SIMULATED_CLEAR",
+        "litigation_status": "SIMULATED_CLEAR",
+        "title_chain": [
+          {
+            "id": "TITLE-01",
+            "date": "2004-06-12",
+            "from": "OWNER_A",
+            "to": "OWNER_B"
+          },
+          {
+            "id": "TITLE-02",
+            "date": "2015-04-16",
+            "from": "OWNER_B",
+            "to": "OWNER_C"
+          }
+        ],
+        "comparables": [
+          {
+            "id": "VAL-01",
+            "value": "8000000.00"
+          },
+          {
+            "id": "VAL-02",
+            "value": "8200000.00"
+          },
+          {
+            "id": "VAL-03",
+            "value": "8400000.00"
+          }
+        ],
+        "documents": [
+          {
+            "id": "DEED-01",
+            "type": "TITLE_DEED",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "property": "DEMO_PLOT_A",
+              "owner": "OWNER_C"
+            }
+          },
+          {
+            "id": "EC-01",
+            "type": "ENCUMBRANCE_SNAPSHOT",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "status": "SIMULATED_CLEAR"
+            }
+          },
+          {
+            "id": "PLAN-01",
+            "type": "BUILDING_PLAN",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "status": "SIMULATED_PRESENT"
+            }
+          }
+        ],
+        "classification": "SYNTHETIC_DEMO_ONLY"
+      }
+    }
+  ],
+  "notice": "No regulatory format, legal title clearance, credit approval or live bank action is certified.",
+  "content_sha256": "b6fefb6a9e703827f2224b62fd28ae7d82dfe77e5663dc84a2cd4b884efcfe30"
+}

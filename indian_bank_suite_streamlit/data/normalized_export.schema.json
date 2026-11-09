@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Proposed PFM normalized export (not an official BaNCS contract)",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "transactions",
+    "data_classification"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "transactions": {
+      "type": "array",
+      "maxItems": 100000,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "customer_id",
+          "account_id",
+          "posted_on",
+          "direction",
+          "currency",
+          "merchant",
+          "narration",
+          "kind",
+          "amount"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,64}$"
+          },
+          "customer_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,64}$"
+          },
+          "account_id": {
+            "type": "string",
+            "pattern": "^DEMO-[A-Za-z0-9_-]{1,59}$"
+          },
+          "posted_on": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "format": "date"
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "DEBIT",
+              "CREDIT"
+            ]
+          },
+          "currency": {
+            "type": "string",
+            "const": "INR"
+          },
+          "merchant": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "narration": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "PAYMENT",
+              "INCOME",
+              "TRANSFER",
+              "REFUND"
+            ]
+          },
+          "original_id": {
+            "type": "string"
+          },
+          "amount": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^\\d+(\\.\\d{1,2})?$"
+              },
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 999999999
+              }
+            ]
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "REFUND"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "original_id"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "data_classification": {
+      "const": "SYNTHETIC_DEMO_ONLY"
+    }
+  }
+}

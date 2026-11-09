@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Application-owned synthetic internal report; not a regulator/vendor schema",
+  "type": "object",
+  "required": [
+    "classification",
+    "artifact",
+    "source",
+    "payload_versions",
+    "notice",
+    "content_sha256"
+  ],
+  "properties": {
+    "classification": {
+      "const": "SYNTHETIC_DEMO_ONLY"
+    },
+    "artifact": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "case",
+        "analysis",
+        "documents",
+        "events",
+        "connector"
+      ]
+    },
+    "payload_versions": {
+      "type": "array"
+    },
+    "notice": {
+      "type": "string"
+    },
+    "content_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

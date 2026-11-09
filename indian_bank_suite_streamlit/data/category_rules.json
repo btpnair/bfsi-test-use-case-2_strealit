@@ -1,0 +1,14 @@
+{
+  "version": "demo-rules-1",
+  "rules": [
+    {"category": "Housing", "tokens": ["RENT", "HOME EMI"]},
+    {"category": "Groceries", "tokens": ["BIGBASKET", "DMART", "GROCERY", "GROCERIES"]},
+    {"category": "Food", "tokens": ["SWIGGY", "ZOMATO", "CAFE", "RESTAURANT"]},
+    {"category": "Transport", "tokens": ["IRCTC", "UBER", "OLA", "METRO", "PETROL"]},
+    {"category": "Utilities", "tokens": ["TNEB", "BESCOM", "ELECTRICITY", "AIRTEL", "JIO", "WATER BILL"]},
+    {"category": "Health", "tokens": ["PHARMACY", "HOSPITAL", "MEDICAL"]},
+    {"category": "Education", "tokens": ["SCHOOL", "TUITION", "COURSE"]},
+    {"category": "Entertainment", "tokens": ["NETFLIX", "CINEMA", "SPOTIFY"]},
+    {"category": "Shopping", "tokens": ["AMAZON", "FLIPKART", "CLOTHING"]}
+  ]
+}

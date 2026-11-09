@@ -1,0 +1,50 @@
+STREAMLIT BANKING WORKBENCH
+
+This adds a native Streamlit interface to the five banking workbench workflows.
+The original local web app and MoneyWise PFM code remain included. The separate
+MoneyWise PFM interface is not converted into Streamlit.
+
+RUN LOCALLY (Python 3.10+)
+Open Terminal in this folder and run:
+  python3 -m pip install -r requirements.txt
+  python3 -m streamlit run streamlit_app.py
+Open the Local URL printed in Terminal (usually http://localhost:8501).
+
+UPDATE YOUR EXISTING GITHUB REPOSITORY
+If your repo already has indian_bank_suite/bankworkbench and indian_bank_suite/pfm:
+1. Open the indian_bank_suite folder on GitHub.
+2. Add file > Upload files.
+3. Upload the new streamlit_app.py and updated requirements.txt from this package.
+4. Commit changes.
+5. On Streamlit Community Cloud select your repository and main branch.
+6. Set Main file path to indian_bank_suite/streamlit_app.py.
+7. Choose Python 3.12 in Advanced settings, then Deploy.
+
+If bankworkbench and pfm are directly at the repository root instead:
+Upload those two files at the root and use streamlit_app.py as Main file path.
+
+NEW REPOSITORY
+Extract the ZIP. Upload the contents of indian_bank_suite/ with folders intact.
+Do not upload only the ZIP. The deployment entry point is streamlit_app.py if
+the folder contents are at the repository root.
+
+DEMO SIGN-IN
+operator      Operator-2026!
+reviewer      Reviewer-2026!
+relationship  Manager-2026!
+compliance    Compliance-2026!
+Check the fictional-demo acknowledgement before signing in.
+Sign out / switch persona retains cases in the same browser session so you can
+demonstrate independent review using the appropriate other persona.
+
+DEMO DATA
+Every browser session uses a separate temporary SQLite database, seeded only
+with fictional fixtures. Data can be lost on reconnect, refresh, restart or
+redeploy. It is not shared with other visitors. Download JSON reports to keep
+demo outputs. Sign-in expires after 10 minutes of inactivity or 30 minutes total.
+These published demo personas are not real access control for sensitive data.
+No live bank connection, customer upload, real refund or regulatory filing exists.
+The fixed analysis clock and original engine business rules are retained.
+
+Documentation:
+https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/deploy

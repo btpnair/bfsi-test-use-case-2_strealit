@@ -1,0 +1,2 @@
+# Streamlit interface; original local server still uses the standard library.
+streamlit>=1.50,<2

@@ -1,0 +1,42 @@
+{
+  "month": "2026-10",
+  "income": "80000.00",
+  "gross_spend": "40023.00",
+  "refunds": "500.00",
+  "net_spend": "39523.00",
+  "surplus": "40477.00",
+  "savings_rate_pct": 50.6,
+  "categories": {
+    "Education": "4500.00",
+    "Entertainment": "499.00",
+    "Food": "2200.00",
+    "Groceries": "7300.00",
+    "Health": "850.00",
+    "Housing": "18000.00",
+    "Other": "375.00",
+    "Shopping": "2000.00",
+    "Transport": "1200.00",
+    "Utilities": "2599.00"
+  },
+  "transaction_count": 17,
+  "evidence_ids": [
+    "TX-001-202610-041",
+    "TX-001-202610-042",
+    "TX-001-202610-043",
+    "TX-001-202610-044",
+    "TX-001-202610-045",
+    "TX-001-202610-046",
+    "TX-001-202610-047",
+    "TX-001-202610-048",
+    "TX-001-202610-049",
+    "TX-001-202610-050",
+    "TX-001-202610-051",
+    "TX-001-202610-053",
+    "TX-001-202610-052",
+    "TX-001-202610-054",
+    "TX-001-202610-055",
+    "TX-001-202610-056",
+    "TX-001-202610-057"
+  ],
+  "coverage": "Imported posted transactions only; full calendar month bucket, possibly incomplete. Transfers excluded. Surplus is cash flow, not account balance."
+}

@@ -1,0 +1,743 @@
+{
+  "classification": "SYNTHETIC_DEMO_ONLY",
+  "cases": [
+    {
+      "module": "onboarding",
+      "scenario": "standard",
+      "title": "Consistent synthetic application",
+      "classification": "SYNTHETIC_DEMO_ONLY",
+      "dossier": {
+        "applicant": "DEMO_CUSTOMER_A",
+        "product": "SAVINGS",
+        "age": 32,
+        "branch": "DEMO_CHENNAI",
+        "consent": true,
+        "screening": "SIMULATED_CLEAR",
+        "documents": [
+          {
+            "id": "KYC-ID-01",
+            "type": "IDENTITY",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "applicant_alias": "DEMO_CUSTOMER_A",
+              "birth_year": "1994",
+              "token": "ID_TOKEN_A"
+            }
+          },
+          {
+            "id": "KYC-ADDR-01",
+            "type": "ADDRESS",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "applicant_alias": "DEMO_CUSTOMER_A",
+              "locality": "DEMO_LOCALITY",
+              "token": "ADDRESS_TOKEN_A"
+            }
+          },
+          {
+            "id": "KYC-FORM-01",
+            "type": "APPLICATION",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "applicant_alias": "DEMO_CUSTOMER_A",
+              "product": "SAVINGS"
+            }
+          }
+        ],
+        "classification": "SYNTHETIC_DEMO_ONLY"
+      }
+    },
+    {
+      "module": "onboarding",
+      "scenario": "name_mismatch",
+      "title": "Cross-document alias mismatch",
+      "classification": "SYNTHETIC_DEMO_ONLY",
+      "dossier": {
+        "applicant": "DEMO_CUSTOMER_A",
+        "product": "SAVINGS",
+        "age": 32,
+        "branch": "DEMO_CHENNAI",
+        "consent": true,
+        "screening": "SIMULATED_CLEAR",
+        "documents": [
+          {
+            "id": "KYC-ID-01",
+            "type": "IDENTITY",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "applicant_alias": "DEMO_CUSTOMER_A",
+              "birth_year": "1994",
+              "token": "ID_TOKEN_A"
+            }
+          },
+          {
+            "id": "KYC-ADDR-01",
+            "type": "ADDRESS",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "applicant_alias": "DEMO_CUSTOMER_B",
+              "locality": "DEMO_LOCALITY",
+              "token": "ADDRESS_TOKEN_A"
+            }
+          },
+          {
+            "id": "KYC-FORM-01",
+            "type": "APPLICATION",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "applicant_alias": "DEMO_CUSTOMER_A",
+              "product": "SAVINGS"
+            }
+          }
+        ],
+        "classification": "SYNTHETIC_DEMO_ONLY"
+      }
+    },
+    {
+      "module": "onboarding",
+      "scenario": "missing_document",
+      "title": "Missing address/application evidence",
+      "classification": "SYNTHETIC_DEMO_ONLY",
+      "dossier": {
+        "applicant": "DEMO_CUSTOMER_A",
+        "product": "SAVINGS",
+        "age": 32,
+        "branch": "DEMO_CHENNAI",
+        "consent": true,
+        "screening": "SIMULATED_CLEAR",
+        "documents": [
+          {
+            "id": "KYC-ID-01",
+            "type": "IDENTITY",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "applicant_alias": "DEMO_CUSTOMER_A",
+              "birth_year": "1994",
+              "token": "ID_TOKEN_A"
+            }
+          }
+        ],
+        "classification": "SYNTHETIC_DEMO_ONLY"
+      }
+    },
+    {
+      "module": "property",
+      "scenario": "standard",
+      "title": "Complete synthetic title chain",
+      "classification": "SYNTHETIC_DEMO_ONLY",
+      "dossier": {
+        "property": "DEMO_PLOT_A",
+        "declared_value": "8500000.00",
+        "owner": "OWNER_C",
+        "registry_status": "SIMULATED_CLEAR",
+        "litigation_status": "SIMULATED_CLEAR",
+        "title_chain": [
+          {
+            "id": "TITLE-01",
+            "date": "2004-06-12",
+            "from": "OWNER_A",
+            "to": "OWNER_B"
+          },
+          {
+            "id": "TITLE-02",
+            "date": "2015-04-16",
+            "from": "OWNER_B",
+            "to": "OWNER_C"
+          }
+        ],
+        "comparables": [
+          {
+            "id": "VAL-01",
+            "value": "8000000.00"
+          },
+          {
+            "id": "VAL-02",
+            "value": "8200000.00"
+          },
+          {
+            "id": "VAL-03",
+            "value": "8400000.00"
+          }
+        ],
+        "documents": [
+          {
+            "id": "DEED-01",
+            "type": "TITLE_DEED",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "property": "DEMO_PLOT_A",
+              "owner": "OWNER_C"
+            }
+          },
+          {
+            "id": "EC-01",
+            "type": "ENCUMBRANCE_SNAPSHOT",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "status": "SIMULATED_CLEAR"
+            }
+          },
+          {
+            "id": "PLAN-01",
+            "type": "BUILDING_PLAN",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "status": "SIMULATED_PRESENT"
+            }
+          }
+        ],
+        "classification": "SYNTHETIC_DEMO_ONLY"
+      }
+    },
+    {
+      "module": "property",
+      "scenario": "title_gap",
+      "title": "Broken title continuity",
+      "classification": "SYNTHETIC_DEMO_ONLY",
+      "dossier": {
+        "property": "DEMO_PLOT_A",
+        "declared_value": "8500000.00",
+        "owner": "OWNER_C",
+        "registry_status": "SIMULATED_CLEAR",
+        "litigation_status": "SIMULATED_CLEAR",
+        "title_chain": [
+          {
+            "id": "TITLE-01",
+            "date": "2004-06-12",
+            "from": "OWNER_A",
+            "to": "OWNER_B"
+          },
+          {
+            "id": "TITLE-02",
+            "date": "2015-04-16",
+            "from": "OWNER_X",
+            "to": "OWNER_C"
+          }
+        ],
+        "comparables": [
+          {
+            "id": "VAL-01",
+            "value": "8000000.00"
+          },
+          {
+            "id": "VAL-02",
+            "value": "8200000.00"
+          },
+          {
+            "id": "VAL-03",
+            "value": "8400000.00"
+          }
+        ],
+        "documents": [
+          {
+            "id": "DEED-01",
+            "type": "TITLE_DEED",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "property": "DEMO_PLOT_A",
+              "owner": "OWNER_C"
+            }
+          },
+          {
+            "id": "EC-01",
+            "type": "ENCUMBRANCE_SNAPSHOT",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "status": "SIMULATED_CLEAR"
+            }
+          },
+          {
+            "id": "PLAN-01",
+            "type": "BUILDING_PLAN",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "status": "SIMULATED_PRESENT"
+            }
+          }
+        ],
+        "classification": "SYNTHETIC_DEMO_ONLY"
+      }
+    },
+    {
+      "module": "property",
+      "scenario": "valuation_exception",
+      "title": "Valuation variance and pending search",
+      "classification": "SYNTHETIC_DEMO_ONLY",
+      "dossier": {
+        "property": "DEMO_PLOT_A",
+        "declared_value": "12000000.00",
+        "owner": "OWNER_C",
+        "registry_status": "SIMULATED_CLEAR",
+        "litigation_status": "SIMULATED_PENDING",
+        "title_chain": [
+          {
+            "id": "TITLE-01",
+            "date": "2004-06-12",
+            "from": "OWNER_A",
+            "to": "OWNER_B"
+          },
+          {
+            "id": "TITLE-02",
+            "date": "2015-04-16",
+            "from": "OWNER_B",
+            "to": "OWNER_C"
+          }
+        ],
+        "comparables": [
+          {
+            "id": "VAL-01",
+            "value": "8000000.00"
+          },
+          {
+            "id": "VAL-02",
+            "value": "8200000.00"
+          },
+          {
+            "id": "VAL-03",
+            "value": "8400000.00"
+          }
+        ],
+        "documents": [
+          {
+            "id": "DEED-01",
+            "type": "TITLE_DEED",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "property": "DEMO_PLOT_A",
+              "owner": "OWNER_C"
+            }
+          },
+          {
+            "id": "EC-01",
+            "type": "ENCUMBRANCE_SNAPSHOT",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "status": "SIMULATED_CLEAR"
+            }
+          },
+          {
+            "id": "PLAN-01",
+            "type": "BUILDING_PLAN",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "status": "SIMULATED_PRESENT"
+            }
+          }
+        ],
+        "classification": "SYNTHETIC_DEMO_ONLY"
+      }
+    },
+    {
+      "module": "leads",
+      "scenario": "standard",
+      "title": "Consented engaged prospect",
+      "classification": "SYNTHETIC_DEMO_ONLY",
+      "dossier": {
+        "prospect": "DEMO_PROSPECT_A",
+        "product": "DEPOSIT",
+        "channel": "EMAIL",
+        "consent": true,
+        "consent_source": "CONSENT-DEMO-01",
+        "consent_expires": "2027-12-31",
+        "dnc": false,
+        "requested_callback": true,
+        "engagements_7d": 3,
+        "need_confirmed": true,
+        "days_since_contact": 2,
+        "history": [
+          {
+            "id": "ENG-01",
+            "date": "2026-11-02",
+            "event": "Prospect asked for deposit product information"
+          },
+          {
+            "id": "ENG-02",
+            "date": "2026-11-04",
+            "event": "Callback preference recorded"
+          }
+        ],
+        "documents": [
+          {
+            "id": "CONSENT-DEMO-01",
+            "type": "CONSENT",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "channel": "EMAIL",
+              "purpose": "DEMO_PRODUCT_INFORMATION"
+            }
+          }
+        ],
+        "classification": "SYNTHETIC_DEMO_ONLY"
+      }
+    },
+    {
+      "module": "leads",
+      "scenario": "no_consent",
+      "title": "Suppressed / no communication consent",
+      "classification": "SYNTHETIC_DEMO_ONLY",
+      "dossier": {
+        "prospect": "DEMO_PROSPECT_A",
+        "product": "DEPOSIT",
+        "channel": "EMAIL",
+        "consent": false,
+        "consent_source": "CONSENT-DEMO-01",
+        "consent_expires": "2027-12-31",
+        "dnc": true,
+        "requested_callback": true,
+        "engagements_7d": 3,
+        "need_confirmed": true,
+        "days_since_contact": 2,
+        "history": [
+          {
+            "id": "ENG-01",
+            "date": "2026-11-02",
+            "event": "Prospect asked for deposit product information"
+          },
+          {
+            "id": "ENG-02",
+            "date": "2026-11-04",
+            "event": "Callback preference recorded"
+          }
+        ],
+        "documents": [
+          {
+            "id": "CONSENT-DEMO-01",
+            "type": "CONSENT",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "channel": "EMAIL",
+              "purpose": "DEMO_PRODUCT_INFORMATION"
+            }
+          }
+        ],
+        "classification": "SYNTHETIC_DEMO_ONLY"
+      }
+    },
+    {
+      "module": "leads",
+      "scenario": "dormant",
+      "title": "Dormant prospect",
+      "classification": "SYNTHETIC_DEMO_ONLY",
+      "dossier": {
+        "prospect": "DEMO_PROSPECT_A",
+        "product": "DEPOSIT",
+        "channel": "EMAIL",
+        "consent": true,
+        "consent_source": "CONSENT-DEMO-01",
+        "consent_expires": "2027-12-31",
+        "dnc": false,
+        "requested_callback": false,
+        "engagements_7d": 0,
+        "need_confirmed": false,
+        "days_since_contact": 75,
+        "history": [
+          {
+            "id": "ENG-01",
+            "date": "2026-11-02",
+            "event": "Prospect asked for deposit product information"
+          },
+          {
+            "id": "ENG-02",
+            "date": "2026-11-04",
+            "event": "Callback preference recorded"
+          }
+        ],
+        "documents": [
+          {
+            "id": "CONSENT-DEMO-01",
+            "type": "CONSENT",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "channel": "EMAIL",
+              "purpose": "DEMO_PRODUCT_INFORMATION"
+            }
+          }
+        ],
+        "classification": "SYNTHETIC_DEMO_ONLY"
+      }
+    },
+    {
+      "module": "grievance",
+      "scenario": "standard",
+      "title": "Payment reversal evidence available",
+      "classification": "SYNTHETIC_DEMO_ONLY",
+      "dossier": {
+        "customer": "DEMO_CUSTOMER_A",
+        "channel": "MOBILE",
+        "description": "UPI payment debited but beneficiary not credited. Please investigate.",
+        "amount": "2500.00",
+        "reported_at": "2026-11-04T10:00:00",
+        "vulnerable_support": false,
+        "regulatory_exception": false,
+        "transaction_status": "SIMULATED_REVERSAL_CONFIRMED",
+        "related_case": null,
+        "documents": [
+          {
+            "id": "PAY-01",
+            "type": "PAYMENT_TRACE",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "status": "SIMULATED_REVERSAL_CONFIRMED",
+              "amount": "2500.00"
+            }
+          },
+          {
+            "id": "ACK-01",
+            "type": "COMPLAINT_ACK",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "received": "2026-11-04T10:00:00"
+            }
+          }
+        ],
+        "classification": "SYNTHETIC_DEMO_ONLY"
+      }
+    },
+    {
+      "module": "grievance",
+      "scenario": "duplicate",
+      "title": "Possible repeated complaint",
+      "classification": "SYNTHETIC_DEMO_ONLY",
+      "dossier": {
+        "customer": "DEMO_CUSTOMER_A",
+        "channel": "MOBILE",
+        "description": "UPI payment debited but beneficiary not credited. Please investigate.",
+        "amount": "2500.00",
+        "reported_at": "2026-11-04T10:00:00",
+        "vulnerable_support": false,
+        "regulatory_exception": false,
+        "transaction_status": "SIMULATED_PENDING",
+        "related_case": "DEMO_RELATED_COMPLAINT",
+        "documents": [
+          {
+            "id": "PAY-01",
+            "type": "PAYMENT_TRACE",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "status": "SIMULATED_PENDING",
+              "amount": "2500.00"
+            }
+          },
+          {
+            "id": "ACK-01",
+            "type": "COMPLAINT_ACK",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "received": "2026-11-04T10:00:00"
+            }
+          }
+        ],
+        "classification": "SYNTHETIC_DEMO_ONLY"
+      }
+    },
+    {
+      "module": "grievance",
+      "scenario": "urgent",
+      "title": "Urgent exception needing human review",
+      "classification": "SYNTHETIC_DEMO_ONLY",
+      "dossier": {
+        "customer": "DEMO_CUSTOMER_A",
+        "channel": "MOBILE",
+        "description": "Repeated ATM debit dispute, urgent assistance requested.",
+        "amount": "2500.00",
+        "reported_at": "2026-11-04T10:00:00",
+        "vulnerable_support": true,
+        "regulatory_exception": true,
+        "transaction_status": "SIMULATED_PENDING",
+        "related_case": null,
+        "documents": [
+          {
+            "id": "PAY-01",
+            "type": "PAYMENT_TRACE",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "status": "SIMULATED_REVERSAL_CONFIRMED",
+              "amount": "2500.00"
+            }
+          },
+          {
+            "id": "ACK-01",
+            "type": "COMPLAINT_ACK",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "received": "2026-11-04T10:00:00"
+            }
+          }
+        ],
+        "classification": "SYNTHETIC_DEMO_ONLY"
+      }
+    },
+    {
+      "module": "str",
+      "scenario": "standard",
+      "title": "Circular transaction chain",
+      "classification": "SYNTHETIC_DEMO_ONLY",
+      "dossier": {
+        "alert": "DEMO_ALERT_A",
+        "subject": "ENTITY_A",
+        "rail": "DEMO_UPI",
+        "transactions": [
+          {
+            "id": "AML-T01",
+            "from": "ENTITY_A",
+            "to": "ENTITY_B",
+            "amount": "600000.00",
+            "at": "2026-11-03T09:00:00"
+          },
+          {
+            "id": "AML-T02",
+            "from": "ENTITY_B",
+            "to": "ENTITY_C",
+            "amount": "550000.00",
+            "at": "2026-11-03T09:30:00"
+          },
+          {
+            "id": "AML-T03",
+            "from": "ENTITY_C",
+            "to": "ENTITY_A",
+            "amount": "500000.00",
+            "at": "2026-11-03T10:00:00"
+          }
+        ],
+        "documents": [
+          {
+            "id": "AML-SOURCE-01",
+            "type": "TRANSACTION_EXPORT",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "coverage": "Synthetic fixture only"
+            }
+          },
+          {
+            "id": "AML-KYC-01",
+            "type": "CUSTOMER_CONTEXT",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "subject": "ENTITY_A",
+              "source": "Synthetic KYC context"
+            }
+          }
+        ],
+        "classification": "SYNTHETIC_DEMO_ONLY"
+      }
+    },
+    {
+      "module": "str",
+      "scenario": "pass_through",
+      "title": "Rapid pass-through chain",
+      "classification": "SYNTHETIC_DEMO_ONLY",
+      "dossier": {
+        "alert": "DEMO_ALERT_A",
+        "subject": "ENTITY_A",
+        "rail": "DEMO_UPI",
+        "transactions": [
+          {
+            "id": "AML-T01",
+            "from": "ENTITY_A",
+            "to": "ENTITY_B",
+            "amount": "600000.00",
+            "at": "2026-11-03T09:00:00"
+          },
+          {
+            "id": "AML-T02",
+            "from": "ENTITY_B",
+            "to": "ENTITY_C",
+            "amount": "550000.00",
+            "at": "2026-11-03T09:30:00"
+          }
+        ],
+        "documents": [
+          {
+            "id": "AML-SOURCE-01",
+            "type": "TRANSACTION_EXPORT",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "coverage": "Synthetic fixture only"
+            }
+          },
+          {
+            "id": "AML-KYC-01",
+            "type": "CUSTOMER_CONTEXT",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "subject": "ENTITY_A",
+              "source": "Synthetic KYC context"
+            }
+          }
+        ],
+        "classification": "SYNTHETIC_DEMO_ONLY"
+      }
+    },
+    {
+      "module": "str",
+      "scenario": "low_signal",
+      "title": "Low-signal alert",
+      "classification": "SYNTHETIC_DEMO_ONLY",
+      "dossier": {
+        "alert": "DEMO_ALERT_A",
+        "subject": "ENTITY_A",
+        "rail": "DEMO_UPI",
+        "transactions": [
+          {
+            "id": "AML-T04",
+            "from": "ENTITY_A",
+            "to": "ENTITY_D",
+            "amount": "5000.00",
+            "at": "2026-11-03T12:00:00"
+          }
+        ],
+        "documents": [
+          {
+            "id": "AML-SOURCE-01",
+            "type": "TRANSACTION_EXPORT",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "coverage": "Synthetic fixture only"
+            }
+          },
+          {
+            "id": "AML-KYC-01",
+            "type": "CUSTOMER_CONTEXT",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "subject": "ENTITY_A",
+              "source": "Synthetic KYC context"
+            }
+          }
+        ],
+        "classification": "SYNTHETIC_DEMO_ONLY"
+      }
+    }
+  ]
+}

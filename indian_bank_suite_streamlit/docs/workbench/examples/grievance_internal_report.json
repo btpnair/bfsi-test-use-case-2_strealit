@@ -1,0 +1,233 @@
+{
+  "classification": "SYNTHETIC_DEMO_ONLY",
+  "artifact": "Internal decision-support report, not external submission",
+  "source": {
+    "case": {
+      "id": "GRIEVANCE-DEMO-001",
+      "module": "grievance",
+      "title": "Payment reversal evidence available",
+      "state": "NEW",
+      "version": 1,
+      "updated_at": "2026-11-06T06:54:22+00:00"
+    },
+    "facts": {
+      "customer": "DEMO_CUSTOMER_A",
+      "channel": "MOBILE",
+      "description": "UPI payment debited but beneficiary not credited. Please investigate.",
+      "amount": "2500.00",
+      "reported_at": "2026-11-04T10:00:00",
+      "vulnerable_support": false,
+      "regulatory_exception": false,
+      "transaction_status": "SIMULATED_REVERSAL_CONFIRMED",
+      "related_case": null,
+      "classification": "SYNTHETIC_DEMO_ONLY"
+    },
+    "analysis": {
+      "findings": [
+        {
+          "code": "POSSIBLE_DUPLICATE",
+          "severity": "review",
+          "title": "Possible related complaint",
+          "detail": "Link and investigate; do not silently reject or close repeated complaints.",
+          "evidence": [
+            "ACK-01",
+            "GRIEVANCE-DEMO-002"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "label": "Classification",
+          "value": "Payments"
+        },
+        {
+          "label": "Priority",
+          "value": "Standard"
+        },
+        {
+          "label": "Demo target",
+          "value": "2026-11-07T10:00"
+        },
+        {
+          "label": "Disputed amount",
+          "value": "INR 2500.00"
+        }
+      ],
+      "details": [
+        {
+          "reference": "PAY-01",
+          "subject": "Verification outcome",
+          "value": "SIMULATED_REVERSAL_CONFIRMED"
+        },
+        {
+          "reference": "ACK-01",
+          "subject": "Intake statement",
+          "value": "UPI payment debited but beneficiary not credited. Please investigate."
+        }
+      ],
+      "draft": "Complaint GRIEVANCE-DEMO-001: Payments; disputed INR 2500.00. Synthetic payment trace records a confirmed reversal. A reviewer must validate the evidence and customer-facing resolution before internal closure. No real refund, customer message or grievance closure has been sent to Bank systems.",
+      "graph": [],
+      "blockers": 0,
+      "evidence_ids": [
+        "PAY-01",
+        "ACK-01"
+      ],
+      "policy_version": "workbench-demo-1",
+      "as_of": "2026-11-06T12:00:00",
+      "method": "Deterministic fixture analysis; no trained model, OCR or external verification."
+    },
+    "documents": [
+      {
+        "id": "PAY-01",
+        "type": "PAYMENT_TRACE",
+        "source": "Synthetic evidence fixture \u2014 no external verification",
+        "status": "SIMULATED_VERIFIED",
+        "fields": {
+          "status": "SIMULATED_REVERSAL_CONFIRMED",
+          "amount": "2500.00"
+        }
+      },
+      {
+        "id": "ACK-01",
+        "type": "COMPLAINT_ACK",
+        "source": "Synthetic evidence fixture \u2014 no external verification",
+        "status": "SIMULATED_VERIFIED",
+        "fields": {
+          "received": "2026-11-04T10:00:00"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "id": "prepare",
+        "label": "Prepare investigation / resolution draft",
+        "enabled": true,
+        "why": "",
+        "roles": [
+          "maker"
+        ]
+      },
+      {
+        "id": "request_review",
+        "label": "Submit for independent review",
+        "enabled": false,
+        "why": "This action is not available in the current case state.",
+        "roles": [
+          "maker"
+        ]
+      },
+      {
+        "id": "approve",
+        "label": "Approve internal resolution",
+        "enabled": false,
+        "why": "This action requires the designated independent reviewer or operational role.",
+        "roles": [
+          "checker"
+        ]
+      },
+      {
+        "id": "return",
+        "label": "Return for correction",
+        "enabled": false,
+        "why": "This action requires the designated independent reviewer or operational role.",
+        "roles": [
+          "checker"
+        ]
+      },
+      {
+        "id": "add_note",
+        "label": "Add evidence-backed note",
+        "enabled": true,
+        "why": "",
+        "roles": [
+          "maker",
+          "checker"
+        ]
+      },
+      {
+        "id": "correct_fixture",
+        "label": "Load corrected synthetic evidence",
+        "enabled": true,
+        "why": "",
+        "roles": [
+          "maker"
+        ]
+      },
+      {
+        "id": "escalate",
+        "label": "Escalate for exception review",
+        "enabled": true,
+        "why": "",
+        "roles": [
+          "maker"
+        ]
+      },
+      {
+        "id": "review_escalation",
+        "label": "Record exception review",
+        "enabled": false,
+        "why": "This action requires the designated independent reviewer or operational role.",
+        "roles": [
+          "checker"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "at": "2026-11-06T06:54:22+00:00",
+        "subject": "subject:2f6158a607f8f3b9518a87eb",
+        "role": "maker",
+        "action": "case_created",
+        "reason": "Seeded fictional scenario",
+        "evidence": "[]",
+        "version": 1
+      }
+    ],
+    "connector": {
+      "status": "NOT_CONNECTED",
+      "message": "Bank-approved integration required. No live verification, account creation, outreach, refund or STR filing is available."
+    }
+  },
+  "payload_versions": [
+    {
+      "version": 1,
+      "state": "NEW",
+      "at": "2026-11-06T06:54:22+00:00",
+      "payload": {
+        "customer": "DEMO_CUSTOMER_A",
+        "channel": "MOBILE",
+        "description": "UPI payment debited but beneficiary not credited. Please investigate.",
+        "amount": "2500.00",
+        "reported_at": "2026-11-04T10:00:00",
+        "vulnerable_support": false,
+        "regulatory_exception": false,
+        "transaction_status": "SIMULATED_REVERSAL_CONFIRMED",
+        "related_case": null,
+        "documents": [
+          {
+            "id": "PAY-01",
+            "type": "PAYMENT_TRACE",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "status": "SIMULATED_REVERSAL_CONFIRMED",
+              "amount": "2500.00"
+            }
+          },
+          {
+            "id": "ACK-01",
+            "type": "COMPLAINT_ACK",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "received": "2026-11-04T10:00:00"
+            }
+          }
+        ],
+        "classification": "SYNTHETIC_DEMO_ONLY"
+      }
+    }
+  ],
+  "notice": "No regulatory format, legal title clearance, credit approval or live bank action is certified.",
+  "content_sha256": "5595332f3c650c61c08959911797a50350f145e891e109fbc9d2c7ee4fd08987"
+}

@@ -1,0 +1,11 @@
+{
+  "classification": "SYNTHETIC_DEMO_ONLY",
+  "policy_version": "workbench-demo-1",
+  "note": "Demonstration thresholds and service targets only. Not Bank-approved policy, law or regulatory criteria.",
+  "property_variance_pct": "25",
+  "lead_handoff_score": 55,
+  "grievance_target_hours": {"standard": 72, "urgent": 24},
+  "str_large_amount_inr": "500000.00",
+  "str_pass_through_pct": "80",
+  "str_window_hours": 2
+}

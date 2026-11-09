@@ -1,0 +1,230 @@
+{
+  "classification": "SYNTHETIC_DEMO_ONLY",
+  "artifact": "Internal decision-support report, not external submission",
+  "source": {
+    "case": {
+      "id": "ONBOARDING-DEMO-001",
+      "module": "onboarding",
+      "title": "Consistent synthetic application",
+      "state": "NEW",
+      "version": 1,
+      "updated_at": "2026-11-06T06:54:22+00:00"
+    },
+    "facts": {
+      "applicant": "DEMO_CUSTOMER_A",
+      "product": "SAVINGS",
+      "age": 32,
+      "branch": "DEMO_CHENNAI",
+      "consent": true,
+      "screening": "SIMULATED_CLEAR",
+      "classification": "SYNTHETIC_DEMO_ONLY"
+    },
+    "analysis": {
+      "findings": [],
+      "metrics": [
+        {
+          "label": "Product",
+          "value": "SAVINGS"
+        },
+        {
+          "label": "Evidence items",
+          "value": "3"
+        },
+        {
+          "label": "Applicant",
+          "value": "DEMO_CUSTOMER_A"
+        },
+        {
+          "label": "CBS connection",
+          "value": "Not connected"
+        }
+      ],
+      "details": [
+        {
+          "reference": "KYC-ID-01",
+          "subject": "IDENTITY",
+          "value": "Applicant Alias: DEMO_CUSTOMER_A \u00b7 Birth Year: 1994 \u00b7 Token: ID_TOKEN_A"
+        },
+        {
+          "reference": "KYC-ADDR-01",
+          "subject": "ADDRESS",
+          "value": "Applicant Alias: DEMO_CUSTOMER_A \u00b7 Locality: DEMO_LOCALITY \u00b7 Token: ADDRESS_TOKEN_A"
+        },
+        {
+          "reference": "KYC-FORM-01",
+          "subject": "APPLICATION",
+          "value": "Applicant Alias: DEMO_CUSTOMER_A \u00b7 Product: SAVINGS"
+        }
+      ],
+      "draft": "Application ONBOARDING-DEMO-001 for DEMO_CUSTOMER_A, product SAVINGS. 3 synthetic evidence items assessed; 0 exceptions. Request package only: account creation, CPV and activation require Bank-approved interfaces and authorization.",
+      "graph": [],
+      "blockers": 0,
+      "evidence_ids": [
+        "KYC-ID-01",
+        "KYC-ADDR-01",
+        "KYC-FORM-01"
+      ],
+      "policy_version": "workbench-demo-1",
+      "as_of": "2026-11-06T12:00:00",
+      "method": "Deterministic fixture analysis; no trained model, OCR or external verification."
+    },
+    "documents": [
+      {
+        "id": "KYC-ID-01",
+        "type": "IDENTITY",
+        "source": "Synthetic evidence fixture \u2014 no external verification",
+        "status": "SIMULATED_VERIFIED",
+        "fields": {
+          "applicant_alias": "DEMO_CUSTOMER_A",
+          "birth_year": "1994",
+          "token": "ID_TOKEN_A"
+        }
+      },
+      {
+        "id": "KYC-ADDR-01",
+        "type": "ADDRESS",
+        "source": "Synthetic evidence fixture \u2014 no external verification",
+        "status": "SIMULATED_VERIFIED",
+        "fields": {
+          "applicant_alias": "DEMO_CUSTOMER_A",
+          "locality": "DEMO_LOCALITY",
+          "token": "ADDRESS_TOKEN_A"
+        }
+      },
+      {
+        "id": "KYC-FORM-01",
+        "type": "APPLICATION",
+        "source": "Synthetic evidence fixture \u2014 no external verification",
+        "status": "SIMULATED_VERIFIED",
+        "fields": {
+          "applicant_alias": "DEMO_CUSTOMER_A",
+          "product": "SAVINGS"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "id": "prepare",
+        "label": "Prepare CBS handoff package",
+        "enabled": true,
+        "why": "",
+        "roles": [
+          "maker"
+        ]
+      },
+      {
+        "id": "request_review",
+        "label": "Submit for independent review",
+        "enabled": false,
+        "why": "This action is not available in the current case state.",
+        "roles": [
+          "maker"
+        ]
+      },
+      {
+        "id": "approve",
+        "label": "Review handoff readiness",
+        "enabled": false,
+        "why": "This action requires the designated independent reviewer or operational role.",
+        "roles": [
+          "checker"
+        ]
+      },
+      {
+        "id": "return",
+        "label": "Return for correction",
+        "enabled": false,
+        "why": "This action requires the designated independent reviewer or operational role.",
+        "roles": [
+          "checker"
+        ]
+      },
+      {
+        "id": "add_note",
+        "label": "Add evidence-backed note",
+        "enabled": true,
+        "why": "",
+        "roles": [
+          "maker",
+          "checker"
+        ]
+      },
+      {
+        "id": "correct_fixture",
+        "label": "Load corrected synthetic evidence",
+        "enabled": true,
+        "why": "",
+        "roles": [
+          "maker"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "at": "2026-11-06T06:54:22+00:00",
+        "subject": "subject:2f6158a607f8f3b9518a87eb",
+        "role": "maker",
+        "action": "case_created",
+        "reason": "Seeded fictional scenario",
+        "evidence": "[]",
+        "version": 1
+      }
+    ],
+    "connector": {
+      "status": "NOT_CONNECTED",
+      "message": "Bank-approved integration required. No live verification, account creation, outreach, refund or STR filing is available."
+    }
+  },
+  "payload_versions": [
+    {
+      "version": 1,
+      "state": "NEW",
+      "at": "2026-11-06T06:54:22+00:00",
+      "payload": {
+        "applicant": "DEMO_CUSTOMER_A",
+        "product": "SAVINGS",
+        "age": 32,
+        "branch": "DEMO_CHENNAI",
+        "consent": true,
+        "screening": "SIMULATED_CLEAR",
+        "documents": [
+          {
+            "id": "KYC-ID-01",
+            "type": "IDENTITY",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "applicant_alias": "DEMO_CUSTOMER_A",
+              "birth_year": "1994",
+              "token": "ID_TOKEN_A"
+            }
+          },
+          {
+            "id": "KYC-ADDR-01",
+            "type": "ADDRESS",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "applicant_alias": "DEMO_CUSTOMER_A",
+              "locality": "DEMO_LOCALITY",
+              "token": "ADDRESS_TOKEN_A"
+            }
+          },
+          {
+            "id": "KYC-FORM-01",
+            "type": "APPLICATION",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "applicant_alias": "DEMO_CUSTOMER_A",
+              "product": "SAVINGS"
+            }
+          }
+        ],
+        "classification": "SYNTHETIC_DEMO_ONLY"
+      }
+    }
+  ],
+  "notice": "No regulatory format, legal title clearance, credit approval or live bank action is certified.",
+  "content_sha256": "781a1e9e17acc839a83c8284aab58c4f515d7c835e913a7cea00925939755c68"
+}

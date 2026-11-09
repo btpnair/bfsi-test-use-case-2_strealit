@@ -1,0 +1,295 @@
+{
+  "classification": "SYNTHETIC_DEMO_ONLY",
+  "artifact": "Internal decision-support report, not external submission",
+  "source": {
+    "case": {
+      "id": "STR-DEMO-001",
+      "module": "str",
+      "title": "Circular transaction chain",
+      "state": "NEW",
+      "version": 1,
+      "updated_at": "2026-11-06T06:54:22+00:00"
+    },
+    "facts": {
+      "alert": "DEMO_ALERT_A",
+      "subject": "ENTITY_A",
+      "rail": "DEMO_UPI",
+      "classification": "SYNTHETIC_DEMO_ONLY"
+    },
+    "analysis": {
+      "findings": [
+        {
+          "code": "LARGE_DEMO_AMOUNT",
+          "severity": "review",
+          "title": "Amount exceeds demo triage threshold",
+          "detail": "Threshold is arbitrary demonstration configuration, not a reporting rule.",
+          "evidence": [
+            "AML-T01"
+          ]
+        },
+        {
+          "code": "LARGE_DEMO_AMOUNT",
+          "severity": "review",
+          "title": "Amount exceeds demo triage threshold",
+          "detail": "Threshold is arbitrary demonstration configuration, not a reporting rule.",
+          "evidence": [
+            "AML-T02"
+          ]
+        },
+        {
+          "code": "LARGE_DEMO_AMOUNT",
+          "severity": "review",
+          "title": "Amount exceeds demo triage threshold",
+          "detail": "Threshold is arbitrary demonstration configuration, not a reporting rule.",
+          "evidence": [
+            "AML-T03"
+          ]
+        },
+        {
+          "code": "PASS_THROUGH",
+          "severity": "review",
+          "title": "Rapid onward movement in fixture",
+          "detail": "Outgoing transactions total INR 550000.00 within the configured window. This is an investigation signal, not proof of wrongdoing.",
+          "evidence": [
+            "AML-T01",
+            "AML-T02"
+          ]
+        },
+        {
+          "code": "PASS_THROUGH",
+          "severity": "review",
+          "title": "Rapid onward movement in fixture",
+          "detail": "Outgoing transactions total INR 500000.00 within the configured window. This is an investigation signal, not proof of wrongdoing.",
+          "evidence": [
+            "AML-T02",
+            "AML-T03"
+          ]
+        },
+        {
+          "code": "CIRCULAR_PATH",
+          "severity": "review",
+          "title": "Time-ordered circular path identified",
+          "detail": "A chain returns to an earlier entity. Investigators must validate context and source coverage.",
+          "evidence": [
+            "AML-T01",
+            "AML-T02",
+            "AML-T03"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "label": "Transactions",
+          "value": "3"
+        },
+        {
+          "label": "Gross edge volume",
+          "value": "INR 1650000.00"
+        },
+        {
+          "label": "Entities",
+          "value": "3"
+        },
+        {
+          "label": "Filing authority",
+          "value": "Not available in demo"
+        }
+      ],
+      "details": [
+        {
+          "reference": "AML-T01",
+          "subject": "2026-11-03T09:00:00",
+          "value": "ENTITY_A \u2192 ENTITY_B | INR 600000.00"
+        },
+        {
+          "reference": "AML-T02",
+          "subject": "2026-11-03T09:30:00",
+          "value": "ENTITY_B \u2192 ENTITY_C | INR 550000.00"
+        },
+        {
+          "reference": "AML-T03",
+          "subject": "2026-11-03T10:00:00",
+          "value": "ENTITY_C \u2192 ENTITY_A | INR 500000.00"
+        }
+      ],
+      "draft": "INTERNAL DRAFT \u2014 NOT FILED. Alert DEMO_ALERT_A, case STR-DEMO-001. 3 synthetic transaction edges across 3 entities, gross edge volume INR 1650000.00 (may count the same funds more than once). Observed configured signals: Amount exceeds demo triage threshold, Rapid onward movement in fixture, Time-ordered circular path identified. Sources: AML-T01, AML-T02, AML-T03. No conclusion of criminality is drawn. Source completeness, customer context and investigator rationale require independent compliance review. No regulatory format or submission is asserted.",
+      "graph": [
+        {
+          "id": "AML-T01",
+          "from": "ENTITY_A",
+          "to": "ENTITY_B",
+          "label": "INR 600000.00",
+          "at": "2026-11-03T09:00:00"
+        },
+        {
+          "id": "AML-T02",
+          "from": "ENTITY_B",
+          "to": "ENTITY_C",
+          "label": "INR 550000.00",
+          "at": "2026-11-03T09:30:00"
+        },
+        {
+          "id": "AML-T03",
+          "from": "ENTITY_C",
+          "to": "ENTITY_A",
+          "label": "INR 500000.00",
+          "at": "2026-11-03T10:00:00"
+        }
+      ],
+      "blockers": 0,
+      "evidence_ids": [
+        "AML-SOURCE-01",
+        "AML-KYC-01",
+        "AML-T01",
+        "AML-T02",
+        "AML-T03"
+      ],
+      "policy_version": "workbench-demo-1",
+      "as_of": "2026-11-06T12:00:00",
+      "method": "Deterministic fixture analysis; no trained model, OCR or external verification."
+    },
+    "documents": [
+      {
+        "id": "AML-SOURCE-01",
+        "type": "TRANSACTION_EXPORT",
+        "source": "Synthetic evidence fixture \u2014 no external verification",
+        "status": "SIMULATED_VERIFIED",
+        "fields": {
+          "coverage": "Synthetic fixture only"
+        }
+      },
+      {
+        "id": "AML-KYC-01",
+        "type": "CUSTOMER_CONTEXT",
+        "source": "Synthetic evidence fixture \u2014 no external verification",
+        "status": "SIMULATED_VERIFIED",
+        "fields": {
+          "subject": "ENTITY_A",
+          "source": "Synthetic KYC context"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "id": "prepare",
+        "label": "Prepare investigation narrative",
+        "enabled": true,
+        "why": "",
+        "roles": [
+          "maker"
+        ]
+      },
+      {
+        "id": "request_review",
+        "label": "Submit for independent review",
+        "enabled": false,
+        "why": "This action is not available in the current case state.",
+        "roles": [
+          "maker"
+        ]
+      },
+      {
+        "id": "approve",
+        "label": "Review internal STR draft",
+        "enabled": false,
+        "why": "This action requires the designated independent reviewer or operational role.",
+        "roles": [
+          "compliance"
+        ]
+      },
+      {
+        "id": "return",
+        "label": "Return for correction",
+        "enabled": false,
+        "why": "This action requires the designated independent reviewer or operational role.",
+        "roles": [
+          "compliance"
+        ]
+      },
+      {
+        "id": "add_note",
+        "label": "Add evidence-backed note",
+        "enabled": true,
+        "why": "",
+        "roles": [
+          "maker",
+          "compliance"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "at": "2026-11-06T06:54:22+00:00",
+        "subject": "subject:2f6158a607f8f3b9518a87eb",
+        "role": "maker",
+        "action": "case_created",
+        "reason": "Seeded fictional scenario",
+        "evidence": "[]",
+        "version": 1
+      }
+    ],
+    "connector": {
+      "status": "NOT_CONNECTED",
+      "message": "Bank-approved integration required. No live verification, account creation, outreach, refund or STR filing is available."
+    }
+  },
+  "payload_versions": [
+    {
+      "version": 1,
+      "state": "NEW",
+      "at": "2026-11-06T06:54:22+00:00",
+      "payload": {
+        "alert": "DEMO_ALERT_A",
+        "subject": "ENTITY_A",
+        "rail": "DEMO_UPI",
+        "transactions": [
+          {
+            "id": "AML-T01",
+            "from": "ENTITY_A",
+            "to": "ENTITY_B",
+            "amount": "600000.00",
+            "at": "2026-11-03T09:00:00"
+          },
+          {
+            "id": "AML-T02",
+            "from": "ENTITY_B",
+            "to": "ENTITY_C",
+            "amount": "550000.00",
+            "at": "2026-11-03T09:30:00"
+          },
+          {
+            "id": "AML-T03",
+            "from": "ENTITY_C",
+            "to": "ENTITY_A",
+            "amount": "500000.00",
+            "at": "2026-11-03T10:00:00"
+          }
+        ],
+        "documents": [
+          {
+            "id": "AML-SOURCE-01",
+            "type": "TRANSACTION_EXPORT",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "coverage": "Synthetic fixture only"
+            }
+          },
+          {
+            "id": "AML-KYC-01",
+            "type": "CUSTOMER_CONTEXT",
+            "source": "Synthetic evidence fixture \u2014 no external verification",
+            "status": "SIMULATED_VERIFIED",
+            "fields": {
+              "subject": "ENTITY_A",
+              "source": "Synthetic KYC context"
+            }
+          }
+        ],
+        "classification": "SYNTHETIC_DEMO_ONLY"
+      }
+    }
+  ],
+  "notice": "No regulatory format, legal title clearance, credit approval or live bank action is certified.",
+  "content_sha256": "18dbea0e295dc9d8b54c7ea4dddb5924c735c6dc2827842fcad970691a34773b"
+}
